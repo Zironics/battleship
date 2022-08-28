@@ -33,7 +33,28 @@ h3 {
     box-sizing: border-box;
     border: 1px solid rgb(0, 0, 0);
     z-index: 1;
-  
+}
+
+.lostBoard {
+    background-image: linear-gradient(rgb(251, 164, 25),
+    rgb(255, 158, 61),
+    rgb(252, 116, 42),
+    rgb(255, 99, 2),
+    rgb(241, 41, 6)
+    );
+    background-size:auto 500%; 
+    animation: bg-animation 2s ease-in-out infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: bottom;
+    }
+
+    100% {
+        background-position: top;
+    }
+    
 }
 
 .cell {

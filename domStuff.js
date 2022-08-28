@@ -397,13 +397,26 @@ export function listenRestart(game){
         game.startgame(game);
         toggleDisplay();
         setTextInInfo("carrier");
+        let cBoard=document.querySelector(".c-board");
+        cBoard.classList.remove("lostBoard");
+        let pBoard=document.querySelector(".p-board");
+        pBoard.classList.remove("lostBoard");
         this.removeEventListener("click",handle);
     });
 }
 
 function endGame(winner) {
     let message=document.querySelector(".announcement");
-    winner ? message.textContent="You won !" : message.textContent="Computer beats you !";
+    if(winner) {
+        let cBoard=document.querySelector(".c-board");
+        cBoard.classList.add("lostBoard");
+        message.textContent="You won !"
+    }
+    else {
+        let pBoard=document.querySelector(".p-board");
+        pBoard.classList.add("lostBoard");
+        message.textContent="Computer beats you !";
+    }
     toggleDisplay();
 }
 
